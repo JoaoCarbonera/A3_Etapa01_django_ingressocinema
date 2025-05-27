@@ -1,0 +1,4 @@
+ingressocinema/__pycache__/*
+/apps/usuarios/__pycache__/*
+/apps/usuarios/migrations/*
+.env
