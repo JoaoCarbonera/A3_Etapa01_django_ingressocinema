@@ -1,0 +1,58 @@
+@startuml SistemaDeIngressos
+
+class Usuario {
+  + nome
+  + email
+  + cpf
+}
+
+class Filme {
+  + titulo
+  + data_lancamento
+  + descricao
+  + duracao
+}
+
+class Cinema {
+  + nome
+  + endereco
+}
+
+class Sala {
+  + numero
+  + capacidade
+}
+
+class Cadeira {
+  + codigo
+  + fileira
+  + numero
+}
+
+class Sessao {
+  + horario
+  + preco
+}
+
+class Ingresso {
+  + codigo
+  + utilizado
+}
+
+class Compra {
+  + data
+  + valor_total
+}
+
+' Relacionamentos
+Usuario "1" --> "n" Compra
+Filme "1" --> "n" Sessao
+Cinema "1" --> "n" Sala
+Sala "1" --> "n" Cadeira
+Sala "1" --> "n" Sessao
+Sessao "1" --> "n" Ingresso
+Compra "1" --> "n" Ingresso
+Ingresso "1" --> "1" Cadeira
+Cinema "1" --> "n" Sessao
+
+@enduml
