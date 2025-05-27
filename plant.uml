@@ -1,47 +1,72 @@
-@startuml SistemaDeIngressos
+@startuml SistemaIngressosCinema
 
 class Usuario {
+  + id
   + nome
   + email
   + cpf
+  + data_nascimento
 }
 
 class Filme {
+  + id
   + titulo
   + data_lancamento
   + descricao
   + duracao
+  + classificacao_indicativa
 }
 
 class Cinema {
+  + id
   + nome
   + endereco
+  + cidade
+  + telefone
 }
 
 class Sala {
+  + id
   + numero
   + capacidade
+  + tipo_tela
+  + tipo_sonorizacao
 }
 
 class Cadeira {
+  + id
   + codigo
   + fileira
   + numero
+  + tipo
+  + acessivel
 }
 
 class Sessao {
+  + id
   + horario
   + preco
+  + tipo_exibicao
+  + idioma
+  + legendado
 }
 
 class Ingresso {
+  + id
   + codigo
+  + data_emissao
   + utilizado
+  + valor_pago
+  + tipo_ingresso
 }
 
 class Compra {
+  + id
   + data
   + valor_total
+  + forma_pagamento
+  + status
+  + codigo_confirmacao
 }
 
 ' Relacionamentos
